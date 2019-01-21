@@ -7,7 +7,7 @@ class CommentManager extends Manager
 	public function postComment($chapterId, $author, $comment)
 	{
 		$db= $this->dbConnect();
-	    $comments = $db->prepare('INSERT INTO comment(chapter_id, name, comment, comment_date) VALUES (?,?,?, NOW())');
+	    $comments = $db->prepare('INSERT INTO comment(chapter_id, name, comment, comment_date, report) VALUES (?,?,?, NOW(),0)');
 	    $affectedLines = $comments->execute(array($chapterId, $author, $comment));
 	    return $affectedLines;
 	}
@@ -18,5 +18,11 @@ class CommentManager extends Manager
 	    $comments->execute(array($chapterId));
 
 	    return $comments;
+	}
+	public function reportComment($id) {
+		$db = $this->dbConnect();
+		$comment = $db->prepare('UPDATE comment SET report = ? WHERE id=?');
+		$comment->execute(array(1,$id));
+		return $comment;
 	}
 }

@@ -17,6 +17,12 @@ function chapter()
 	$postManager = new delalande\forteroche\model\PostManager();
 	$chapter = $postManager->getPost($_GET['id']);
 	$comments =$commentManager->getComments($_GET['id']);
+	if(isset($_GET['report'])){
+		$report =$commentManager->reportComment($_GET['report']);
+		 header('Location: index.php?action=chapter&id='.$_GET['id']);
+	}
+
+	
     require('view/frontend/singleView.php');
 }
 /* envoi commentaire */

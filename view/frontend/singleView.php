@@ -27,11 +27,12 @@
 			</header>
 			<div class="comment-content">	
 				<p><?= $comment['comment'] ?></p>
-				<a href="#" class="comment-alert">Signaler le commentaire</a>
+				<a href="?action=chapter&id=<?= $chapter['id'] ?>&report=<?= $comment['id'] ?>" class="comment-alert">Signaler le commentaire</a>
 			</div>
 			</div>
 		<?php
  		} 
+ 		 $comments->closeCursor();
 		?>
 	</section>
 			
