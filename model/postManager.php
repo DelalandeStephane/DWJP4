@@ -14,13 +14,13 @@ class PostManager extends Manager
 		$current = $page;
 		$start = ($current-1)*$nbPages;
 		$p=$start;
-	    $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM chapter ORDER BY creation_date  LIMIT '.$p.' , 2');
+	    $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%i\') AS creation_date_fr FROM chapter ORDER BY creation_date  LIMIT '.$p.' , 2');
 	    return $req;
 	}
 	public function getPost($chapterId)
 	{
 	    $db = $this->dbConnect();
-	    $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM chapter WHERE id = ?');
+	    $req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%i\') AS creation_date_fr FROM chapter WHERE id = ?');
 	    $req->execute(array($chapterId));
 	    $post = $req->fetch();
 	    return $post;

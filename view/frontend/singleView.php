@@ -3,8 +3,9 @@
 	
 	<section id="single-page" class="content">
 		<article class="single-content">
+			<p class="chapter-time">date de création : <?= $chapter['creation_date_fr'] ?></p>
 			<h3><?= $chapter['title']?></h3>
-			<p><?= $chapter['content'] ?></p>
+			<p class="chapter-content"><?= $chapter['content'] ?></p>
 		</article>
 	</section>
 	<form method="post" action="index.php?action=sendComment&id=<?= $chapter['id'] ?>#chapter-comment" class="comment-form" id="chapter-comment">
