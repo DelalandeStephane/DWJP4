@@ -15,7 +15,25 @@
 		<textarea id="comment" name="comment"></textarea><br>
 		<input type="submit" value="Envoyer" class="form-bt">
 	</form>
-
+	<section>
+		<h2 class="comment-title">Commentaires</h2>
+		<?php
+			while ($comment = $comments->fetch()) {
+			?> 
+			<div class="comment-deco">
+			<header>
+				<h3><?= $comment['name'] ?></h3>
+				<p><?= $comment['comment_date_fr'] ?></p>
+			</header>
+			<div class="comment-content">	
+				<p><?= $comment['comment'] ?></p>
+				<a href="#" class="comment-alert">Signaler le commentaire</a>
+			</div>
+			</div>
+		<?php
+ 		} 
+		?>
+	</section>
 			
 
 <?php $content = ob_get_clean(); ?>

@@ -11,4 +11,12 @@ class CommentManager extends Manager
 	    $affectedLines = $comments->execute(array($chapterId, $author, $comment));
 	    return $affectedLines;
 	}
+	public function getComments($chapterId)
+	{
+		$db= $this->dbConnect();
+	    $comments = $db->prepare('SELECT id, name, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comment WHERE chapter_id = ? ORDER BY comment_date DESC');
+	    $comments->execute(array($chapterId));
+
+	    return $comments;
+	}
 }

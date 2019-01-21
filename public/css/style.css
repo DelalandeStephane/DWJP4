@@ -151,6 +151,30 @@ input {
 	font-size: 1.2em;
 	
 }
+
+.comment-deco {
+	font-family: arial;
+}
+
+.comment-deco header {
+	padding: 10px;
+}
+.comment-content {
+	background-color: white;
+	padding: 20px
+}
+
+.comment-alert {
+	display: block;
+	color: red;
+	margin:20px 0 -15px 0px ;
+}
+
+.comment-title {
+	text-align: center;
+	font-size: 3em;
+	margin:30px;
+}
 /* ----- FOOTER -----*/
 
 footer {

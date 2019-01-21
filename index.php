@@ -9,7 +9,7 @@ try {
 				listChapters($_GET['page']);
 			}
 		}
-		/*Affiche un chapitre selectionné*/
+		/*Affiche un chapitre selectionné + commentaires*/
 		elseif ($_GET['action'] == 'chapter') {
 			chapter();
 		}
@@ -22,7 +22,6 @@ try {
                 throw new Exception('Erreur : aucun identifiant de billet envoyé');
             }
         }
-
 	}
 	else {
 		if( isset($_GET['page'])) {
