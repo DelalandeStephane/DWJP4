@@ -124,6 +124,33 @@ header li {
 .single-content h3 {
 	margin-top: 100px;
 }
+
+.comment-form {
+	background-color: rgba(0,0,0,0.7);
+	text-align: center;
+	padding: 20px 0;
+	margin-top:30px;
+	color:white;
+	font-family: arial;
+}
+textarea {
+	margin: 20px 10px;
+	resize: none;
+	height: 150px;
+	width:50%;
+}
+
+input {
+	margin:20px 0;
+	height: 20px;
+}
+
+.form-bt {
+	padding: 10px 10px 30px 10px;
+	border-radius:10px; 
+	font-size: 1.2em;
+	
+}
 /* ----- FOOTER -----*/
 
 footer {
