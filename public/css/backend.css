@@ -1,0 +1,46 @@
+/* -------- BACkEND ------*/
+
+.container-backend {
+	display: flex;
+		height: 900px;
+}
+.container-backend nav {
+	background-color: rgba(0,0,0,0.5);
+	width:20%;
+  height: 36%;
+	border-bottom-left-radius: 20px;
+}
+.container-backend a {
+	display: block;
+	background-color:rgba(255,255,255,0.6);
+	font-family:arial;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-left: 10px;
+	margin-bottom: 5px;
+	border-bottom: 3px solid black;
+	border-bottom-left-radius: 20px;
+	height: 30px;
+}
+
+.backend-content {
+	background-color: white;
+	width:80%;		
+}
+.backend-title {
+	font-family: 'Lobster';
+	font-size: 2.5em;
+	text-align: center;
+	margin-top:110px;
+}
+
+.backend-nav-deco-square {
+	height: 120px;
+	background-color:rgba(0,0,0,0.5);
+}
+
+.backend-bt {
+	background: rgba(0,0,0,0.7);
+	margin-left:20px;
+	color: white;
+}
