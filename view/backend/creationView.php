@@ -1,5 +1,6 @@
 <?php ob_start() ?>
 <form>
+	<input type="text" name="title" id="title"> 
 	<textarea id="write-area"></textarea>
 	<input type="submit" value="Envoyer" class="form-bt backend-bt">
 </form>

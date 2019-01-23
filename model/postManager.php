@@ -25,5 +25,11 @@ class PostManager extends Manager
 	    $post = $req->fetch();
 	    return $post;
 	}
+	public function sendPost($title, $content){
+		$db= $this->dbConnect();
+		$chapter =$db->prepare('INSERT INTO chapter(title , content, creation_date) VALUES(?,?, NOW())');
+		$send = $chapter->execute(array($title,$content));
+	    return $send;
+	}
 
 }
