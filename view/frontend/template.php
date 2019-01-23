@@ -13,7 +13,7 @@
 				<li><a href="index.php">Accueil</a></li>
 				<li><a href="*">L'auteur</a></li>
 				<li><a href="*">Nouveau chapitre</a></li>
-				<li><a href="*">Administration</a></li>
+				<li><a href="?action=admin">Administration</a></li>
 			</ul>
 		</header>
 			<?= $content ?>

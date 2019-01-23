@@ -3,15 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="../../public/css/style.css">
-	<link rel="stylesheet" type="text/css" href="../../public/css/backend.css">
+	<link rel="stylesheet" type="text/css" href="public/css/style.css">
+	<link rel="stylesheet" type="text/css" href="public/css/backend.css">
 </head>
 <body>
 	<div class="container container-backend">
 		<nav>
 			<div class="backend-nav-deco-square"></div>
 			<ul>
-				<li><a href="#">Création d'article</a></li>
+				<li><a href="?action=creationarticle">Création d'article</a></li>
 				<li><a href="#">Liste des articles</a></li>
 				<li><a href="#">Vos commentaires</a></li>
 				<li><a href="#">Commentaires signalés</a></li>

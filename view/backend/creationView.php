@@ -1,7 +1,9 @@
 <?php ob_start() ?>
-<form>
-	<input type="text" name="title" id="title"> 
-	<textarea id="write-area"></textarea>
+<h2>Creation d'article</h2>
+<form method="post" action="index.php?action=sendpost">
+	<label class="creation-label" for="title">Titre du chapitre</label>
+	<input type="text" name="title" id="title" class="title-field"> 
+	<textarea id="write-area" name="content"></textarea>
 	<input type="submit" value="Envoyer" class="form-bt backend-bt">
 </form>
 
@@ -11,7 +13,7 @@
  <script>
   tinymce.init({
     selector: '#write-area',
-    height:800,
+    height:720,
     resize:false
   });
   </script>

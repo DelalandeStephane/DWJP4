@@ -1,5 +1,6 @@
 <?php
 require('controller/frontend.php');
+require('controller/backend.php');
 
 try {
 	if(isset($_GET['action'])) {
@@ -22,7 +23,23 @@ try {
                 throw new Exception('Erreur : aucun identifiant de billet envoyé');
             }
         }
+ /* BACKEND*/
+
+ 
+ 		elseif ($_GET['action'] == 'admin') {
+	 		adminArea();
+	 	}
+
+	 	elseif ($_GET['action'] == 'creationarticle') {
+	 		creationArticle();
+	 	}
+	 	elseif ($_GET['action'] == 'sendpost') {
+	 		sendChapter($_POST['title'], $_POST['content']);
+	 	}
 	}
+
+
+
 	else {
 		if( isset($_GET['page'])) {
 				listChapters($_GET['page']);
