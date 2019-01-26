@@ -58,11 +58,24 @@ function listComment() {
 	require('view/backend/commentListView.php');
 }
 
+function listReportComments() {
+	$commentManager = new delalande\forteroche\model\CommentManager();
+	$comments = $commentManager->adminReportComment();
+	require('view/backend/reportCommentsView.php');
+}
+
 function deleteComment($id) {
 	$commentManager = new delalande\forteroche\model\CommentManager();
 	$commentManager->adminDelete($id);
 
 	header('Location: index.php?action=admincomments');
+}
+
+function checkComment($id) {
+	$commentManager = new delalande\forteroche\model\CommentManager();
+	$commentManager-> adminCommentChecked($id);
+
+	header('Location: index.php?action=adminreportcomments');
 }
 
 

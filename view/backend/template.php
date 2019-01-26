@@ -14,7 +14,7 @@
 				<li><a href="?action=creationarticle">Création d'article</a></li>
 				<li><a href="?action=adminposts">Liste des articles</a></li>
 				<li><a href="?action=admincomments">Vos commentaires</a></li>
-				<li><a href="#">Commentaires signalés</a></li>
+				<li><a href="?action=adminreportcomments">Commentaires signalés</a></li>
 			</ul>
 		</nav>
 		<section class="backend-content">

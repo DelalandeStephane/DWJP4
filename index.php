@@ -75,17 +75,30 @@ try {
 	 			throw new Exception("aucun identifiant envoyé");
 	 		}	
 	 	}
+	 	/* affiche la liste des commentaires*/
 	 	elseif ($_GET['action'] == 'admincomments') {
 	 		listComment();
 	 	}
-
+	 	/* supprimer un commentaire*/
 	 	elseif ($_GET['action'] == 'supprcomment') {
 	 		if(isset($_GET['id'])){
 	 			deleteComment($_GET['id']);
 	 		} 
 	 		else {
 	 			throw new Exception("aucun identifiant envoyé");
-	 			
+	 		}
+	 	}
+	 	/* affiche la liste des commentaire signalés*/
+	 	elseif ($_GET['action'] == 'adminreportcomments') {
+	 		listReportComments();
+	 	}
+	 	/* Enleve le signalement du commentaire*/
+	 	elseif ($_GET['action'] == 'checkcomment') {
+	 		if(isset($_GET['id'])){
+	 			checkComment($_GET['id']);
+	 		} 
+	 		else {
+	 			throw new Exception("aucun identifiant envoyé");
 	 		}
 	 	}
 	}

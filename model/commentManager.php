@@ -33,6 +33,12 @@ class CommentManager extends Manager
 		return $req;
 	}
 
+		public function adminReportComment () {
+		$req = $this->db->query('SELECT * , DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comment WHERE report = 1');
+
+		return $req;
+	}
+
 	public function adminDelete ($id) {
 		$req=$this->db->prepare('DELETE FROM comment WHERE id = ?');
 		$deleted = $req->execute(array ($id));
