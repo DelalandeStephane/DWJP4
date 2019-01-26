@@ -24,19 +24,24 @@ try {
             }
         }
  /* BACKEND*/
-
- 
+ 		/* acces zone admin*/
  		elseif ($_GET['action'] == 'admin') {
 	 		adminArea();
 	 	}
-
+	 	/*page creation article*/
 	 	elseif ($_GET['action'] == 'creationarticle') {
 	 		creationArticle();
 	 	}
+	 	/*Envoi de l'article*/
 	 	elseif ($_GET['action'] == 'sendpost') {
 	 		sendChapter($_POST['title'], $_POST['content']);
 	 	}
+	 		/*Envoi de l'article*/
+	 	elseif ($_GET['action'] == 'adminposts') {
+	 			adminListChapters();
+	 	}
 	}
+
 
 
 
@@ -45,7 +50,7 @@ try {
 				listChapters($_GET['page']);
 			}
 		else {
-			listChapters(1);
+				listChapters(1);
 		}
 		
 	}

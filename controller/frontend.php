@@ -8,6 +8,31 @@ function listChapters($page)
 {
 	$postManager = new delalande\forteroche\model\PostManager();
 	$posts = $postManager->getPosts($page);
+	if(!isset($_GET['page'])) {
+		$_GET['page'] = 1;
+	}
+	/*Pagination*/
+	$nbPage = $postManager->getPage();
+	if(isset($_GET['page']) && !empty($_GET['page'])){
+		if($_GET['page'] == 1 ) {
+			$back = $_GET['page'];
+			$next = $_GET['page'] +1;
+		} 
+		else {
+			$back = $_GET['page'] - 1 ;
+			if($_GET['page'] == $nbPage+1){		
+				$next = $_GET['page'];
+			} 
+			else {
+				$next = $_GET['page'] + 1 ;
+			}
+		}	
+	}
+	else {
+		$back = 1;
+		$next = 2;
+	}
+
 	require('view/frontend/chaptersView.php');
 }
 /* affiche chapitre + commentaires*/
