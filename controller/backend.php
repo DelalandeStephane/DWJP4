@@ -32,8 +32,22 @@ function adminListChapters()
 
 function deleteChapter($id) {
 	$postManager = new delalande\forteroche\model\PostManager();
-	$posts = $postManager->adminDelete($id);
+	$postManager->adminDelete($id);
 
 	header('Location: index.php?action=adminposts');
 
+}
+
+function updateViewChapter($id) {
+	$postManager = new delalande\forteroche\model\PostManager();
+	$chapter = $postManager->getPost($id);
+
+	require('view/backend/updateChapterView.php');
+}
+
+function updateChapter($title, $content,$id) {
+	$postManager= new delalande\forteroche\model\PostManager();
+	$sendPost = $postManager->adminUpdate($title, $content,$id);
+
+	header('Location: index.php?action=adminposts');
 }

@@ -19,6 +19,12 @@ class PostManager extends Manager
 		return $deleted;
 	}
 
+		public function adminUpdate ($title, $content, $id) {
+		$req=$this->db->prepare('UPDATE chapter SET title = ?,content = ?,update_date = NOW() WHERE id = ? ');
+		$updated = $req->execute(array ($title, $content, $id));
+		return $updated;
+	}
+
 	public function getPosts($page)
 	{	
 		$count = $this->db->query('SELECT COUNT(*) AS total from chapter');

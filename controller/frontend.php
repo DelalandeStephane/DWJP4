@@ -11,6 +11,7 @@ function listChapters($page)
 	if(!isset($_GET['page'])) {
 		$_GET['page'] = 1;
 	}
+	
 	/*Pagination*/
 	$nbPage = $postManager->getPage();
 	if(isset($_GET['page']) && !empty($_GET['page'])){
@@ -32,7 +33,6 @@ function listChapters($page)
 		$back = 1;
 		$next = 2;
 	}
-
 	require('view/frontend/chaptersView.php');
 }
 /* affiche chapitre + commentaires*/
