@@ -29,3 +29,11 @@ function adminListChapters()
 
 	require('view/backend/chapterListView.php');
 }
+
+function deleteChapter($id) {
+	$postManager = new delalande\forteroche\model\PostManager();
+	$posts = $postManager->adminDelete($id);
+
+	header('Location: index.php?action=adminposts');
+
+}

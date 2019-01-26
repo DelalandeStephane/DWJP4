@@ -40,6 +40,10 @@ try {
 	 	elseif ($_GET['action'] == 'adminposts') {
 	 			adminListChapters();
 	 	}
+	 		/*Suprimer article*/
+	 	elseif ($_GET['action'] == 'supprchapter') {
+	 			deleteChapter($_GET['id']);
+	 	}
 	}
 
 

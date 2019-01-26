@@ -13,6 +13,12 @@ class PostManager extends Manager
 		 return $req;
 	}
 
+	public function adminDelete ($id) {
+		$req=$this->db->prepare('DELETE FROM chapter WHERE id = ?');
+		$deleted = $req->execute(array ($id));
+		return $deleted;
+	}
+
 	public function getPosts($page)
 	{	
 		$count = $this->db->query('SELECT COUNT(*) AS total from chapter');
