@@ -75,6 +75,19 @@ try {
 	 			throw new Exception("aucun identifiant envoyé");
 	 		}	
 	 	}
+	 	elseif ($_GET['action'] == 'admincomments') {
+	 		listComment();
+	 	}
+
+	 	elseif ($_GET['action'] == 'supprcomment') {
+	 		if(isset($_GET['id'])){
+	 			deleteComment($_GET['id']);
+	 		} 
+	 		else {
+	 			throw new Exception("aucun identifiant envoyé");
+	 			
+	 		}
+	 	}
 	}
 
 

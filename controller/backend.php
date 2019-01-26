@@ -51,3 +51,19 @@ function updateChapter($title, $content,$id) {
 
 	header('Location: index.php?action=adminposts');
 }
+
+function listComment() {
+	$commentManager = new delalande\forteroche\model\CommentManager();
+	$comments = $commentManager->adminComment();
+	require('view/backend/commentListView.php');
+}
+
+function deleteComment($id) {
+	$commentManager = new delalande\forteroche\model\CommentManager();
+	$commentManager->adminDelete($id);
+
+	header('Location: index.php?action=admincomments');
+}
+
+
+
