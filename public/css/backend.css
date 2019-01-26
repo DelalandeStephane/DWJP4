@@ -61,3 +61,27 @@ h2 {
 }
 
 
+/* */
+
+table {
+	border-collapse: collapse;
+	margin:20px auto;
+}
+
+th {
+	border: solid;
+	padding: 10px;
+}
+
+td {
+	border:solid black 1px;
+	border-collapse: collapse;
+	padding: 10px;
+}
+td:nth-child(odd) {
+	background:#e2e2e2;
+}
+td a {
+  display: flex;
+	justify-content: center;
+}

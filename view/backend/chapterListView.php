@@ -1,4 +1,5 @@
 <?php ob_start();?>
+		<h2>Liste des articles</h2>
 		<table>
 			<tr>
 				<th>ID</th>
