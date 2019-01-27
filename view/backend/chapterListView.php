@@ -22,7 +22,7 @@
      		<td><?= $data['creation_date_fr'] ?></td>
      		<td><?= $data['update_date_fr'] ?></td>
      		<td><a href="?action=updatepage&id=<?= $data['id'] ?>"><img src="public/img/refresh-button.png"></a></td>
-     		<td><a href="?action=supprchapter&id=<?= $data['id'] ?>"><img src="public/img/close-cross.png"></a></td>
+     		<td><a class="delete-alert" href="?action=supprchapter&id=<?= $data['id'] ?>"><img src="public/img/close-cross.png"></a></td>
      	</tr>
             
         <?php

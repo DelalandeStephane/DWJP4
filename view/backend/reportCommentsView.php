@@ -20,8 +20,8 @@
      		<td><?= $data['name'] ?></td>
      		<td><?= $data['comment'] ?></td>
      		<td><?= $data['comment_date_fr'] ?></td>
-            <td><a href="?action=checkcomment&id=<?= $data['id'] ?>"><img src="public/img/checked.png"></a></td>
-     		<td><a href="?action=supprcomment&id=<?= $data['id'] ?>"><img src="public/img/close-cross.png"></a></td>
+            <td><a class="agree-alert" href="?action=checkcomment&id=<?= $data['id'] ?>"><img src="public/img/checked.png"></a></td>
+     		<td><a class="delete-alert" href="?action=supprcomment&id=<?= $data['id'] ?>"><img src="public/img/close-cross.png"></a></td>
      	</tr>
             
         <?php

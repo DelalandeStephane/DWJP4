@@ -9,14 +9,7 @@
 
 
    
- <script src='http://cloud.tinymce.com/5-testing/tinymce.min.js'></script>
- <script>
-  tinymce.init({
-    selector: '#write-area',
-    height:720,
-    resize:false
-  });
-  </script>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php');?>

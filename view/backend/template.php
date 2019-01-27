@@ -24,5 +24,7 @@
 	<footer>
 		<p>Delalande Stephane -Dans le cadre du projet 4  DWJ -OpenClass room-</p>
 	</footer>
+	 <script src='http://cloud.tinymce.com/5-testing/tinymce.min.js'></script>
+	 <script src='public/js/main.js'></script>
 </body>
 </html>

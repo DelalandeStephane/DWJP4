@@ -2,7 +2,7 @@
 
 .container-backend {
 	display: flex;
-		height: 970px;
+	min-height: 970px;
 }
 .container-backend nav {
 	background-color: rgba(0,0,0,0.5);
