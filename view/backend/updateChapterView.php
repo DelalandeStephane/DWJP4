@@ -1,4 +1,4 @@
-<?php ob_start() ?>
+<?php ob_start(); ?>
 <h2>Creation d'article</h2>
 <form method="post" action="index.php?action=updatepost&id=<?= $chapter['id']?>">
 	<label class="creation-label" for="title">Titre du chapitre</label>

@@ -20,11 +20,9 @@ for (var deleted of deleteEl) {
  	}
 
 /* Gestion de l'éditeur de texte */
-window.addEventListener('load', function(){
+
 	tinymce.init({
     selector: '#write-area',
     height:720,
     resize:false
-  });
-
-})
+});

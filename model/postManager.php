@@ -43,7 +43,7 @@ class PostManager extends Manager
 	    return $post;
 	}
 	public function sendPost($title, $content){
-		$chapter =$this->db->prepare('INSERT INTO chapter(title , content, creation_date) VALUES(?,?, NOW())');
+		$chapter = $this->db->prepare('INSERT INTO chapter(title, content, creation_date) VALUES(?,?, NOW())');
 		$send = $chapter->execute(array($title,$content));
 	    return $send;
 	}

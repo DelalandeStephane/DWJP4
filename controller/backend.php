@@ -17,8 +17,8 @@ function creationArticle(){
 }
 
 function sendChapter($title, $content) {
-	$postManager= new delalande\forteroche\model\PostManager();
-	$sendPost = $postManager->sendPost($title, $content);
+	$postManager = new delalande\forteroche\model\PostManager();
+	$postManager->sendPost($title, $content);
 	header('Location: index.php?action=creationarticle');
 }
 
