@@ -39,7 +39,7 @@ try {
 
 	 	/*Envoi de l'article*/
 	 	elseif ($_GET['action'] == 'sendpost') {
-	 		sendChapter(htmlspecialchars($_POST['title']), htmlspecialchars($_POST['content']));
+	 		sendChapter(htmlspecialchars($_POST['chapter-index']), htmlspecialchars($_POST['title']), html_entity_decode($_POST['content']));
 	 	}
 	 		/* vu liste des chapitres*/
 	 	elseif ($_GET['action'] == 'adminposts') {
@@ -69,7 +69,7 @@ try {
 	 	/* Modification d'un post*/
 		elseif ($_GET['action'] == 'updatepost') {
 			if(isset($_GET['id'])){
-	 			updateChapter(htmlspecialchars($_POST['title']), htmlspecialchars($_POST['content']), $_GET['id']);
+	 			updateChapter(htmlspecialchars($_POST['chapter-index']), htmlspecialchars($_POST['title']), html_entity_decode($_POST['content']), $_GET['id']);
 	 		}
 	 		else {
 	 			throw new Exception("aucun identifiant envoyé");

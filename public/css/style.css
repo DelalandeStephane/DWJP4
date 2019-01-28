@@ -125,8 +125,8 @@ header li {
 /*   ---------  SINGLE VIEW  ----------*/
 
 .single-content p {
-	margin-bottom: 100px;
-	line-height: 30px;
+	margin:30px 30px;
+	line-height: 20px;
 }
 
 .single-content h3 {

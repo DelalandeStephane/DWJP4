@@ -16,9 +16,9 @@ function creationArticle(){
 	require('view/backend/creationView.php');
 }
 
-function sendChapter($title, $content) {
+function sendChapter($chapterIndex,$title, $content) {
 	$postManager = new delalande\forteroche\model\PostManager();
-	$postManager->sendPost($title, $content);
+	$postManager->sendPost($chapterIndex, $title, $content);
 	header('Location: index.php?action=creationarticle');
 }
 
@@ -45,9 +45,9 @@ function updateViewChapter($id) {
 	require('view/backend/updateChapterView.php');
 }
 
-function updateChapter($title, $content,$id) {
+function updateChapter($chapterIndex,$title, $content,$id) {
 	$postManager= new delalande\forteroche\model\PostManager();
-	$sendPost = $postManager->adminUpdate($title, $content,$id);
+	$sendPost = $postManager->adminUpdate($chapterIndex, $title, $content,$id);
 
 	header('Location: index.php?action=adminposts');
 }

@@ -3,6 +3,7 @@
 		<table>
 			<tr>
 				<th>ID</th>
+                <th>index chapitre</th>
 				<th>titre</th>
 				<th>date de creation</th>
 				<th>derniere modification</th>
@@ -18,6 +19,7 @@
         ?>
      	<tr>
      		<td><?= $data['id'] ?></td>
+            <td><?= $data['chapter_index'] ?></td>
      		<td><?= $data['title'] ?></td>
      		<td><?= $data['creation_date_fr'] ?></td>
      		<td><?= $data['update_date_fr'] ?></td>
