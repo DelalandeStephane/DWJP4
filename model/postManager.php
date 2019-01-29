@@ -27,8 +27,7 @@ class PostManager extends Manager
 
 	public function getPosts($page)
 	{	
-		$nbPages = 6;	
-		$start = ($page-1) * $nbPages;
+		$start = ($page-1) * 2;
 	    $req = $this->db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%i\') AS creation_date_fr FROM chapter ORDER BY chapter_index  LIMIT '.$start.' , 2');
 	    return $req;
 	}
@@ -47,7 +46,7 @@ class PostManager extends Manager
 	public function getPage() {
 		$count = $this->db->query('SELECT COUNT(*) AS total from chapter');
 		$result = $count->fetch();
-		$nbPages = ceil($result['total']/3);
+		$nbPages = ceil($result['total']/2);
 		return $nbPages;
 	}
 
