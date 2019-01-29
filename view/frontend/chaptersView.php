@@ -4,7 +4,7 @@
 				<?php if(isset($_GET['page']) && $_GET['page'] != 1 && !empty($_GET['page'])): ?>
 					<a href="index.php?page=<?= $back ?>" class="triangle nav-bar-page" id="triangle-left"></a>
 				<?php endif; ?>
-				<?php if(isset($_GET['page']) && $_GET['page'] != $nbPage+1 && !empty($_GET['page'])): ?>
+				<?php if(isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] != $nbPage+1 ): ?>
 					<a href="index.php?page=<?= $next ?>" class="triangle nav-bar-page" id="triangle-right">
 					</a>
 				<?php endif; ?>	
