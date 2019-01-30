@@ -30,8 +30,10 @@ try {
  /* BACKEND*/
  		/* acces zone admin*/
  		elseif ($_GET['action'] == 'admin') {
-	 		adminArea();
+	 		securityAcess();
 	 	}
+	
+
 	 	/*page creation article*/
 	 	elseif ($_GET['action'] == 'creationarticle') {
 	 		creationArticle();

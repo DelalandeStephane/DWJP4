@@ -65,3 +65,8 @@ function sendComment($chapterId, $author, $comment)
         header('Location: index.php?action=chapter&id='.$chapterId);
     }
 }
+
+function securityAcess () {
+	require('view/frontend/password.php');
+}
+

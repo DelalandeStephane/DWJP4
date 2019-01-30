@@ -61,18 +61,17 @@ header li {
 }
 
 .index-page {
-  padding: 20px;
-		width:50%;
+  	padding: 20px;
+	width:50%;
 }
-
 
 .index-page:last-child {
 	border-left: 1px solid grey;
-		box-shadow: -2px 0 25px rgb(0,0,0,0.7);		
+	box-shadow: -2px 0 25px rgb(0,0,0,0.7);		
 }
 
 .content h3 {
-	font-size:2.5em;
+	font-size:2em;
 	margin:20px 0 80px 0;
 	text-align: center
 }
@@ -111,7 +110,7 @@ header li {
 }
 
 #triangle-left {
-	 border-right : 30px solid white;
+	border-right : 30px solid white;
 	left:-30px;
 
 }
@@ -119,7 +118,6 @@ header li {
 #triangle-right {
  	border-left : 30px solid white;
 	right: -30px;
-
 }
 
 /*   ---------  SINGLE VIEW  ----------*/

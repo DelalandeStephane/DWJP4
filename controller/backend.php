@@ -6,6 +6,9 @@ require_once('model/commentManager.php');
 
 /* Affichage de la vue creation */
 
+
+
+
 function adminArea(){
 	$content='<h1>Hello</h1>';
 	
