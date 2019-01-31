@@ -11,17 +11,13 @@ function adminRequest($id, $userpw) {
 	$access = $securityManager->reqPassword($id);
 	$name= $access['name'];
 	$pass = $access['password'];
-
-
-		if($id == $name && password_verify($userpw, $pass)) {
-			$content='<h1>Hello</h1>';
-			require('view/backend/template.php');
-		} else {
-
-			$error="Mauvais identifiant";
-			require('view/frontend/password.php');
-		}
-
+	if($id == $name && password_verify($userpw, $pass)) {
+		$content='<h1>Hello</h1>';
+		require('view/backend/template.php');
+	} else {
+		$error = "Mauvais identifiant";
+		require('view/frontend/password.php');
+	}
 }
 
 function creationArticle(){

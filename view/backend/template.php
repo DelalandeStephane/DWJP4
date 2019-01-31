@@ -15,7 +15,6 @@
 				<li><a href="?action=adminposts">Liste des articles</a></li>
 				<li><a href="?action=admincomments">Vos commentaires</a></li>
 				<li><a href="?action=adminreportcomments">Commentaires signalés</a></li>
-				<li><a href="?action=adminreportcomments">identifiant</a></li>
 			</ul>
 		</nav>
 		<section class="backend-content">

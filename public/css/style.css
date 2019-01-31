@@ -155,6 +155,7 @@ input {
 	padding: 10px 10px 30px 10px;
 	border-radius:10px; 
 	font-size: 1.2em;
+	cursor: pointer;
 }
 
 .comment-deco {
@@ -185,4 +186,16 @@ input {
 footer {
   background: #60b9e4;
 	text-align: center;
+}
+
+/*admin*/
+
+.password-area {
+	background: white;
+	margin: auto;
+	max-width: 400px;
+	text-align: center;
+}
+.password-area h3 {
+	padding: 20px;
 }

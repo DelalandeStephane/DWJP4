@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Administration</title>
-</head>
-<body>
+<?php $title = "" ?>
+<?php ob_start();?>
+
 	 <?php 
 	    	if(isset($error)){
 	   ?>
@@ -12,15 +9,19 @@
 	    	}
 	    ?>
 	<form class="password-area" method="post" action="?action=adminrequest">
-		<label for="user-name">Identifiant : </label>
+		<h3>Zone administration</h3>
+		<label for="user-name">Identifiant</label>
+		<br>
 	    <input type="text" id="user-name" name="user-name" required="">
-	    <label for="user-pw">Mot de passe : </label>
+	    <br>
+	    <label for="user-pw">Mot de passe</label>
+	    <br>
 	    <input type="password" id="user-pw" name="user-pw" required="">
-	    <input type="submit" name="">
+	    <br>
+	    <input type="submit" name="" class="form-bt">
 
 	</form>
 
-</body>
-</html>
 
-
+<?php $content = ob_get_clean(); ?>
+<?php require('template.php');?>
