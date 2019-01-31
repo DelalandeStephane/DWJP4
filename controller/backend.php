@@ -2,17 +2,26 @@
 
 require_once('model/PostManager.php');
 require_once('model/commentManager.php');
-
+require_once('model/securityManager.php');
 
 /* Affichage de la vue creation */
 
+function adminRequest($id, $userpw) {
+	$securityManager = new delalande\forteroche\model\securityManager();
+	$access = $securityManager->reqPassword($id);
+	$name= $access['name'];
+	$pass = $access['password'];
 
 
+		if($id == $name && password_verify($userpw, $pass)) {
+			$content='<h1>Hello</h1>';
+			require('view/backend/template.php');
+		} else {
 
-function adminArea(){
-	$content='<h1>Hello</h1>';
-	
-	require('view/backend/template.php');
+			$error="Mauvais identifiant";
+			require('view/frontend/password.php');
+		}
+
 }
 
 function creationArticle(){

@@ -1,6 +1,5 @@
 <?php
 namespace delalande\forteroche\model ;
-
 class Manager {
 	protected function dbConnect ()
 		{

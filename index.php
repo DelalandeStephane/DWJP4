@@ -32,7 +32,14 @@ try {
  		elseif ($_GET['action'] == 'admin') {
 	 		securityAcess();
 	 	}
-	
+	 	/* Authentification utilisateur*/
+	 	elseif($_GET['action'] == 'adminrequest') {
+	 		if(isset($_POST['user-name']) && isset($_POST['user-pw'])) {
+					adminRequest($_POST['user-name'],$_POST['user-pw']);
+			 }
+		}
+
+
 
 	 	/*page creation article*/
 	 	elseif ($_GET['action'] == 'creationarticle') {
