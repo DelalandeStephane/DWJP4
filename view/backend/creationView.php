@@ -1,3 +1,4 @@
+<?php $title = "Creation article" ?>
 <?php ob_start(); ?>
 
 <h2>Creation d'article</h2>

@@ -1,4 +1,4 @@
-<?php $title = "" ?>
+<?php $title = "Administration" ?>
 <?php ob_start();?>
 
 	 <?php 

@@ -28,6 +28,10 @@ try {
                 throw new Exception('Erreur : aucun identifiant de chapitre envoyé');
             }
         }
+        /*page auteur*/
+		elseif ($_GET['action'] == 'author') {
+			authorPage();
+		}
 
         /* acces zone admin*/
  		elseif ($_GET['action'] == 'admin') {

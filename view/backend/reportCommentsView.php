@@ -1,3 +1,4 @@
+<?php $title = "Commentaires signalés"; ?>
 <?php ob_start();?>
 		<h2>Commentaires signalés</h2>
 		<table>

@@ -1,3 +1,4 @@
+<?php $title = "administration"; ?>
 <?php ob_start();?>
 <div class="button home-admin">
 	<h1>Bienvenue sur votre interface d'administration</h1>

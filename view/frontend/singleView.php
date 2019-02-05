@@ -1,4 +1,4 @@
-<?php $title = "" ?>
+<?php $title = "Chapitre ". $chapter['chapter_index']; ?>
 <?php ob_start();?>
 	
 	<section id="single-page" class="content">

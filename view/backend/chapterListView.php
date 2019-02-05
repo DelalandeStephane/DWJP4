@@ -1,3 +1,4 @@
+<?php $title = "Gestion chapitres"; ?>
 <?php ob_start();?>
 		<h2>Liste des articles</h2>
 		<table>

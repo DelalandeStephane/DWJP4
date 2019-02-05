@@ -1,3 +1,4 @@
+<?php $title = "Gestion commentaires"?>
 <?php ob_start();?>
 		<h2>Liste des commentaires</h2>
 		<table>

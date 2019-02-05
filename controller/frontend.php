@@ -59,6 +59,10 @@ function sendComment($chapterId, $author, $comment)
     }
 }
 
+function authorPage() {
+	require('view/frontend/author.php');
+}
+
 function securityAcess () {
 	if(isset($_SESSION['access'])){
 		require('view/backend/home.php');

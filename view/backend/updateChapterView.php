@@ -1,3 +1,4 @@
+<?php $title = " Modification chapitre ". $chapter['chapter_index']; ?>
 <?php ob_start(); ?>
 <h2>Creation d'article</h2>
 <form method="post" action="index.php?action=updatepost&id=<?= $chapter['id']?>">

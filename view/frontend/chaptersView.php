@@ -1,5 +1,5 @@
 <?php $title = "Billet simple pour l'Alaska" ?>
-<?php ob_start();?><!-- A traduire en php --->
+<?php ob_start();?>
 			<div id="nav-bar-index-page" >
 				<?php if(isset($_GET['page']) && $_GET['page'] != 1 && !empty($_GET['page'])): ?>
 					<a href="index.php?page=<?= $back ?>" class="triangle nav-bar-page" id="triangle-left"></a>
@@ -9,7 +9,7 @@
 					</a>
 				<?php endif; ?>	
 			</div>
-		<section id="index-content" class="content"><!-- Content -->
+		<section id="index-content" class="content">
 			<?php
         while ($data = $posts->fetch())
         {
@@ -24,6 +24,6 @@
         }
         $posts->closeCursor();
         ?>
-		</section><!-- Content -->
+		</section>
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php');?>

@@ -60,7 +60,6 @@ header li {
 }
 
 .index-page {
-  	padding: 20px;
 	width:50%;
 }
 
@@ -185,6 +184,26 @@ footer {
 	text-align: center;
 }
 
+/* auteur*/
+.content-author{
+	background: white;
+}
+
+.content-author img {
+	float: left;
+	width:200px;
+	margin: 50px;
+}
+
+.content-author h2 {
+	padding:50px;
+}
+.content-author p {
+	padding-top: 20px;
+	margin: 0px 100px;
+	padding-bottom: 50px;
+	text-align: justify;
+}
 /*admin*/
 
 .password-area {
