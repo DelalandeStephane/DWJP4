@@ -1,13 +1,35 @@
 /* -------- BACkEND ------*/
 
+.back {
+	position: absolute;
+	top: 10px;
+	left:10px;
+	background:white;
+	padding:10px;
+	border-radius:10px;
+}
+
+.home-admin {
+	margin-top: 100px;
+	text-align: center;
+}
+.home-admin h1 {
+	margin-bottom: 100px;
+}
+
+.home-admin p {
+	font-size: 1.5em;
+}
+
 .container-backend {
 	display: flex;
 	min-height: 970px;
 }
+
 .container-backend nav {
 	background-color: rgba(0,0,0,0.5);
 	width:20%;
-  height: 36%;
+  	height: 36%;
 	border-bottom-left-radius: 20px;
 }
 .container-backend nav a {
@@ -61,7 +83,7 @@ h2 {
 }
 
 
-/* */
+/*Affichage des tableaux */
 
 table {
 	border-collapse: collapse;

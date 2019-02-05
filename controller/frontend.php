@@ -1,5 +1,4 @@
 <?php
-
 require_once('model/PostManager.php');
 require_once('model/commentManager.php');
 
@@ -8,11 +7,9 @@ function listChapters($page)
 {
 	$postManager = new delalande\forteroche\model\PostManager();
 	$posts = $postManager->getPosts($page);
-
 	if(!isset($_GET['page'])) {
 		$_GET['page'] = 1;
-	}
-	
+	}	
 	/*Pagination*/
 	$nbPage = $postManager->getPage();
 	if(isset($_GET['page']) && !empty($_GET['page'])){
@@ -46,9 +43,7 @@ function chapter()
 	if(isset($_GET['report'])){
 		$report =$commentManager->reportComment($_GET['report']);
 		 header('Location: index.php?action=chapter&id='.$_GET['id']);
-	}
-
-	
+	}	
     require('view/frontend/singleView.php');
 }
 /* envoi commentaire */
@@ -56,10 +51,8 @@ function sendComment($chapterId, $author, $comment)
 {
 	$commentManager = new delalande\forteroche\model\CommentManager();
     $affectedLines =$commentManager->postComment($chapterId, $author, $comment);
-
     if($affectedLines == null) {
-    	throw new Exception("Erreur: impossible d'envoyer le formulaire");
-    	
+    	throw new Exception("Erreur: impossible d'envoyer le formulaire");	
     }
     else {
         header('Location: index.php?action=chapter&id='.$chapterId);
@@ -67,6 +60,11 @@ function sendComment($chapterId, $author, $comment)
 }
 
 function securityAcess () {
-	require('view/frontend/password.php');
-}
+	if(isset($_SESSION['access'])){
+		require('view/backend/home.php');
 
+	} 
+	else {
+		require('view/frontend/password.php');
+	}
+}

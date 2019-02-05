@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="public/css/backend.css">
 </head>
 <body>
+	<a href="index.php" class="back">Retour au site</a>
 	<div class="container container-backend">
 		<nav>
 			<div class="backend-nav-deco-square"></div>
@@ -15,6 +16,7 @@
 				<li><a href="?action=adminposts">Liste des articles</a></li>
 				<li><a href="?action=admincomments">Vos commentaires</a></li>
 				<li><a href="?action=adminreportcomments">Commentaires signalés</a></li>
+				<li><a href="?action=adminexit">Déconnexion</a></li>
 			</ul>
 		</nav>
 		<section class="backend-content">

@@ -57,7 +57,6 @@ header li {
 .content {
 	display:flex;
 	background-color:white;
-
 }
 
 .index-page {
@@ -104,15 +103,13 @@ header li {
 }
 
 .nav-bar-page {
-  position: absolute;
+ 	position: absolute;
 	top:200px;
-
 }
 
 #triangle-left {
 	border-right : 30px solid white;
 	left:-30px;
-
 }
 
 #triangle-right {
@@ -184,7 +181,7 @@ input {
 /* ----- FOOTER -----*/
 
 footer {
-  background: #60b9e4;
+  	background: #60b9e4;
 	text-align: center;
 }
 
