@@ -5,8 +5,7 @@
 					<a href="index.php?page=<?= $back ?>" class="triangle nav-bar-page" id="triangle-left"></a>
 				<?php endif; ?>
 				<?php if(isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] != $nbPage ): ?>
-					<a href="index.php?page=<?= $next ?>" class="triangle nav-bar-page" id="triangle-right">
-					</a>
+					<a href="index.php?page=<?= $next ?>" class="triangle nav-bar-page" id="triangle-right"></a>
 				<?php endif; ?>	
 			</div>
 		<section id="index-content" class="content">

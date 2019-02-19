@@ -27,10 +27,6 @@ function listChapters($page)
 			}
 		}	
 	}
-	else {
-		$back = 1;
-		$next = 2;
-	}
 	require('view/frontend/chaptersView.php');
 }
 /* affiche chapitre + commentaires*/
@@ -38,14 +34,27 @@ function chapter()
 {
 	$commentManager = new delalande\forteroche\model\commentManager();
 	$postManager = new delalande\forteroche\model\PostManager();
-	$chapter = $postManager->getPost($_GET['id']);
-	$comments =$commentManager->getComments($_GET['id']);
-	if(isset($_GET['report'])){
-		$report =$commentManager->reportComment($_GET['report']);
-		 header('Location: index.php?action=chapter&id='.$_GET['id']);
-	}	
+
+	if(isset($_GET['id']) && !empty($_GET['id'])) {
+		$chapter = $postManager->getPost($_GET['id']);
+		$comments =$commentManager->getComments($_GET['id']);
+	}
+
     require('view/frontend/singleView.php');
 }
+
+function reportCom(){
+
+	$commentManager = new delalande\forteroche\model\commentManager();
+
+	if(isset($_GET['idcom']) && !empty($_GET['idcom'])){
+		$report =$commentManager->reportComment($_GET['idcom']);
+		 header('Location: index.php?action=chapter&id='.$_GET['id']);
+	}	
+
+}
+
+
 /* envoi commentaire */
 function sendComment($chapterId, $author, $comment) 
 {

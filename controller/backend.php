@@ -6,12 +6,12 @@ require_once('model/securityManager.php');
 
 /* Affichage de la vue creation */
 
-function adminRequest($id, $userpw) {
+function adminRequest($username, $userpw) {
 	$securityManager = new delalande\forteroche\model\securityManager();
-	$access = $securityManager->reqPassword($id);
+	$access = $securityManager->reqPassword($username);
 	$name= $access['name'];
 	$pass = $access['password'];
-	if($id == $name && password_verify($userpw, $pass)) {
+	if($username == $name && password_verify($userpw, $pass)) {
 		$_SESSION['access'] = true;
 		require('view/backend/home.php');
 	} else {

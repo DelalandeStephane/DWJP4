@@ -10,8 +10,7 @@ try {
 			if( isset($_GET['page']) && $_GET['page'] > 0 /* et supperieur a nb page*/) {
 				listChapters($_GET['page']);
 			} else {
-				throw new Exception(" page non existante");
-				
+				throw new Exception(" page non existante");	
 			}
 		}
 		/*Affiche un chapitre selectionné + commentaires*/
@@ -28,6 +27,12 @@ try {
                 throw new Exception('Erreur : aucun identifiant de chapitre envoyé');
             }
         }
+        /* Commentaire signalé*/
+        elseif ($_GET['action'] == 'report') {
+        	if (isset($_GET['id'])) {
+        		reportCom();
+        	}
+		}
         /*page auteur*/
 		elseif ($_GET['action'] == 'author') {
 			authorPage();
@@ -43,7 +48,9 @@ try {
 	 	/* Authentification utilisateur*/
 	 	elseif($_GET['action'] == 'adminrequest') {
 	 		if(isset($_POST['user-name']) && isset($_POST['user-pw'])) {
-				adminRequest($_POST['user-name'],$_POST['user-pw']);
+				adminRequest(htmlspecialchars($_POST['user-name']),htmlspecialchars($_POST['user-pw']));
+			 } else {
+			 	throw new Exception("Erreur :pas d'identifiant ou de mot de passe envoyé");
 			 }
 		}
 			/*Verifie l'acces à la zone d'administration*/

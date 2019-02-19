@@ -10,9 +10,14 @@
 body {
 	font-family: 'Aleo', serif;
 	background-image: url(../img/bg-alaska3.jpg);
-	background-size: 100%;
-	background-attachment: fixed;
-	height: 100%;
+	background-size: cover;
+	background-attachment: fixed ;
+}
+
+html, body { 
+   margin:0; 
+   padding:0; 
+   height:100%;
 }
 
 a {
@@ -31,9 +36,16 @@ h1{
 
 .container {
 	max-width:1100px;
-	margin: 100px auto;
+	margin:auto;
+	margin-top: 100px;
 	position: relative;
 }
+
+.main { 
+   min-height:100%; 
+   position:relative;
+   overflow: hidden;  
+} 
 
 /*------ HEADER ------*/
 header {
@@ -57,6 +69,7 @@ header li {
 .content {
 	display:flex;
 	background-color:white;
+	min-height: 650px;
 }
 
 .index-page {
@@ -70,7 +83,7 @@ header li {
 
 .content h3 {
 	font-size:2em;
-	margin:20px 0 80px 0;
+	margin:70px 0 80px 0;
 	text-align: center
 }
 
@@ -182,6 +195,8 @@ input {
 footer {
   	background: #60b9e4;
 	text-align: center;
+	margin-top: 20px;
+   	height:20px;
 }
 
 /* auteur*/
@@ -214,4 +229,8 @@ footer {
 }
 .password-area h3 {
 	padding: 20px;
+}
+
+.error {
+	color: red;
 }

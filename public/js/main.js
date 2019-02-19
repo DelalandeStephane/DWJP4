@@ -21,8 +21,8 @@ for (var deleted of deleteEl) {
 
 /* Gestion de l'éditeur de texte */
 
-	tinymce.init({
-    selector: '#write-area',
-    height:720,
-    resize:false
+tinymce.init({
+selector: '#write-area',
+height:720,
+resize:false
 });

@@ -6,9 +6,9 @@
 				<th>ID</th>
                 <th>identifiant chapitre</th>
 				<th>pseudo</th>
-				<th>Commetaire</th>
+				<th>Commentaire</th>
 				<th>date de publication</th>
-				<th>suprimmer</th>
+				<th>supprimer</th>
 			</tr>
 		<?php	
         while ($data = $comments->fetch())

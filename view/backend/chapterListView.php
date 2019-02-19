@@ -9,7 +9,7 @@
 				<th>date de creation</th>
 				<th>derniere modification</th>
 				<th>modifier</th>
-				<th>suprimmer</th>
+				<th>supprimer</th>
 			</tr>
 		<?php	
         while ($data = $posts->fetch())
