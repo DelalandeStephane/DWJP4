@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title><?= $title ?></title>
 	<link rel="stylesheet" type="text/css" href="public/css/style.css">
+	<link rel="stylesheet" type="text/css" href="public/css/responsive.css">
 </head>
 <body>
 	<div class="main">

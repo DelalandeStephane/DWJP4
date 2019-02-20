@@ -15,7 +15,7 @@
         ?>
         <article class="index-page">
 			<h3><?= $data['title'] ?></h3>
-			<p><?= substr($data['content'],0,700) ?> ...</p>
+			<p><?= substr($data['content'],0,600) ?> ...</p>
 			<a href="?action=chapter&id=<?= $data['id'] ?>">Lire plus</a>
 		</article>
             
@@ -23,6 +23,17 @@
         }
         $posts->closeCursor();
         ?>
+        <div id="nav-bar-mobile" >
+				<?php if(isset($_GET['page']) && $_GET['page'] != 1 && !empty($_GET['page'])): ?>
+					<a href="index.php?page=<?= $back ?>" >Précédent</a>
+				<?php endif; ?>
+				<?php if(isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] != $nbPage ): ?>
+					<a href="index.php?page=<?= $next ?>">Suivant</a>
+				<?php endif; ?>	
+			</div>
+		
 		</section>
+
+		
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php');?>

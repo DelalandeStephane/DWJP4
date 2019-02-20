@@ -44,14 +44,12 @@ function chapter()
 }
 
 function reportCom(){
-
 	$commentManager = new delalande\forteroche\model\commentManager();
 
 	if(isset($_GET['idcom']) && !empty($_GET['idcom'])){
 		$report =$commentManager->reportComment($_GET['idcom']);
 		 header('Location: index.php?action=chapter&id='.$_GET['id']);
 	}	
-
 }
 
 
