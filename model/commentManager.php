@@ -1,6 +1,6 @@
 <?php
-namespace delalande\forteroche\model ;
-require_once('model/Manager.php');
+namespace forteroche;
+require_once('model/manager.php');
 
 class CommentManager extends Manager 
 {

@@ -1,11 +1,12 @@
 <?php
-require_once('model/PostManager.php');
-require_once('model/commentManager.php');
 
-/* Récupere la liste des chapitres à afficher*/
+require 'model/AutoLoader.php'; //chargement des class model
+forteroche\AutoLoader::register(); 
+
+
 function listChapters($page)
 {
-	$postManager = new delalande\forteroche\model\PostManager();
+	$postManager = new forteroche\PostManager();
 	$posts = $postManager->getPosts($page);
 	if(!isset($_GET['page'])) {
 		$_GET['page'] = 1;
@@ -32,8 +33,8 @@ function listChapters($page)
 /* affiche chapitre + commentaires*/
 function chapter()
 {
-	$commentManager = new delalande\forteroche\model\commentManager();
-	$postManager = new delalande\forteroche\model\PostManager();
+	$commentManager = new forteroche\commentManager();
+	$postManager = new forteroche\PostManager();
 
 	if(isset($_GET['id']) && !empty($_GET['id'])) {
 		$chapter = $postManager->getPost($_GET['id']);
@@ -44,7 +45,7 @@ function chapter()
 }
 
 function reportCom(){
-	$commentManager = new delalande\forteroche\model\commentManager();
+	$commentManager = new forteroche\commentManager();
 
 	if(isset($_GET['idcom']) && !empty($_GET['idcom'])){
 		$report =$commentManager->reportComment($_GET['idcom']);
@@ -56,7 +57,7 @@ function reportCom(){
 /* envoi commentaire */
 function sendComment($chapterId, $author, $comment) 
 {
-	$commentManager = new delalande\forteroche\model\CommentManager();
+	$commentManager = new forteroche\CommentManager();
     $affectedLines =$commentManager->postComment($chapterId, $author, $comment);
     if($affectedLines == null) {
     	throw new Exception("Erreur: impossible d'envoyer le formulaire");	

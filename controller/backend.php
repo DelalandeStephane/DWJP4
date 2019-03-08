@@ -1,13 +1,10 @@
 <?php
 
-require_once('model/PostManager.php');
-require_once('model/commentManager.php');
-require_once('model/securityManager.php');
 
 /* Affichage de la vue creation */
 
 function adminRequest($username, $userpw) {
-	$securityManager = new delalande\forteroche\model\securityManager();
+	$securityManager = new forteroche\securityManager();
 	$access = $securityManager->reqPassword($username);
 	$name= $access['name'];
 	$pass = $access['password'];
@@ -25,56 +22,56 @@ function creationArticle(){
 }
 
 function sendChapter($chapterIndex,$title, $content) {
-	$postManager = new delalande\forteroche\model\PostManager();
+	$postManager = new forteroche\PostManager();
 	$postManager->sendPost($chapterIndex, $title, $content);
 	header('Location: index.php?action=creationarticle');
 } 
 
 function adminListChapters()
 {
-	$postManager = new delalande\forteroche\model\PostManager();
+	$postManager = new forteroche\PostManager();
 	$posts = $postManager->adminPosts();
 	require('view/backend/chapterListView.php');
 }
 
 function deleteChapter($id) {
-	$postManager = new delalande\forteroche\model\PostManager();
+	$postManager = new forteroche\PostManager();
 	$postManager->adminDelete($id);
 	header('Location: index.php?action=adminposts');
 }
 
 function updateViewChapter($id) {
-	$postManager = new delalande\forteroche\model\PostManager();
+	$postManager = new forteroche\PostManager();
 	$chapter = $postManager->getPost($id);
 	require('view/backend/updateChapterView.php');
 }
 
 function updateChapter($chapterIndex,$title, $content,$id) {
-	$postManager= new delalande\forteroche\model\PostManager();
+	$postManager= new forteroche\PostManager();
 	$sendPost = $postManager->adminUpdate($chapterIndex, $title, $content,$id);
 	header('Location: index.php?action=adminposts');
 }
 
 function listComment() {
-	$commentManager = new delalande\forteroche\model\CommentManager();
+	$commentManager = new forteroche\CommentManager();
 	$comments = $commentManager->adminComment();
 	require('view/backend/commentListView.php');
 }
 
 function listReportComments() {
-	$commentManager = new delalande\forteroche\model\CommentManager();
+	$commentManager = new forteroche\CommentManager();
 	$comments = $commentManager->adminReportComment();
 	require('view/backend/reportCommentsView.php');
 }
 
 function deleteComment($id) {
-	$commentManager = new delalande\forteroche\model\CommentManager();
+	$commentManager = new forteroche\CommentManager();
 	$commentManager->adminDelete($id);
 	header('Location: index.php?action=admincomments');
 }
 
 function checkComment($id) {
-	$commentManager = new delalande\forteroche\model\CommentManager();
+	$commentManager = new forteroche\CommentManager();
 	$commentManager-> adminCommentChecked($id);
 	header('Location: index.php?action=adminreportcomments');
 }

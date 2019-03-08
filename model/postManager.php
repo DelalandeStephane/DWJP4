@@ -1,7 +1,7 @@
 <?php
 
-namespace delalande\forteroche\model ;
-require('manager.php');
+namespace forteroche ;
+require_once('manager.php');
 class PostManager extends Manager
 {
 	public function __construct() {

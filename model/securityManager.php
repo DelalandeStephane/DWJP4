@@ -1,5 +1,5 @@
 <?php
-namespace delalande\forteroche\model ;
+namespace forteroche;
 require_once('manager.php');
 
 class SecurityManager extends Manager {
