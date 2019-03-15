@@ -10,8 +10,10 @@
 			</div>
 		<section id="index-content" class="content">
 			<?php
+
         while ($data = $posts->fetch())
         {
+        	
         ?>
         <article class="index-page">
 			<h3><?= $data['title'] ?></h3>

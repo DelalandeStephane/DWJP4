@@ -19,7 +19,7 @@ class PostManager extends Manager
 		return $deleted;
 	}
 
-		public function adminUpdate ($chapterIndex, $title, $content, $id) {
+	public function adminUpdate ($chapterIndex, $title, $content, $id) {
 		$req=$this->db->prepare('UPDATE chapter SET chapter_index = ?, title = ?,content = ?,update_date = NOW() WHERE id = ? ');
 		$updated = $req->execute(array ($chapterIndex, $title, $content, $id));
 		return $updated;
@@ -28,14 +28,17 @@ class PostManager extends Manager
 	public function getPosts($page)
 	{	
 		$start = ($page-1) * 2;
-	    $req = $this->db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%i\') AS creation_date_fr FROM chapter ORDER BY chapter_index  LIMIT '.$start.' , 2');
-	    return $req;
+	    $req = $this->db->prepare('SELECT * FROM chapter ORDER BY chapter_index  LIMIT :start,2');
+		$req->bindValue(':start', $start, \PDO::PARAM_INT);
+		$req->execute();
+	    return  $req;
 	}
 	public function getPost($chapterId)
 	{
 	    $req = $this->db->prepare('SELECT * , DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%i\') AS creation_date_fr FROM chapter WHERE id = ?');
 	    $req->execute(array($chapterId));
 	    $post = $req->fetch();
+
 	    return $post;
 	}
 	public function sendPost($chapterIndex, $title, $content){
@@ -49,5 +52,4 @@ class PostManager extends Manager
 		$nbPages = ceil($result['total']/2);
 		return $nbPages;
 	}
-
 }

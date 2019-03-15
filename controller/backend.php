@@ -1,6 +1,5 @@
 <?php
 
-
 /* Affichage de la vue creation */
 
 function adminRequest($username, $userpw) {
