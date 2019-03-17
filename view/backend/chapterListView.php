@@ -11,26 +11,29 @@
 				<th>modifier</th>
 				<th>supprimer</th>
 			</tr>
-		<?php	
-        while ($data = $posts->fetch())
-        {
-        	if($data['update_date_fr'] == null) {
-        		$data['update_date_fr'] = 'pas de modification';
-        	}
+		<?php
+        foreach ($posts as $data) {
+
+            if($data->getUpdateDate() == null) {
+                 $updateDate = 'pas de modification';
+            } 
+            else {
+                  $updateDate = $data->getUpdateDate();
+            }
         ?>
+    
      	<tr>
-     		<td><?= $data['id'] ?></td>
-            <td><?= $data['chapter_index'] ?></td>
-     		<td><?= $data['title'] ?></td>
-     		<td><?= $data['creation_date_fr'] ?></td>
-     		<td><?= $data['update_date_fr'] ?></td>
-     		<td><a href="?action=updatepage&id=<?= $data['id'] ?>"><img src="public/img/refresh-button.png"></a></td>
-     		<td><a class="delete-alert" href="?action=supprchapter&id=<?= $data['id'] ?>"><img src="public/img/close-cross.png"></a></td>
+     		<td><?= $data->getId() ?></td>
+            <td><?= $data->getChapter_index() ?></td>
+     		<td><?= $data->getTitle() ?></td>
+     		<td><?= $data->getCreationDate() ?></td>
+     		<td><?= $updateDate ?></td>
+     		<td><a href="?action=updatepage&id=<?= $data->getId() ?>"><img src="public/img/refresh-button.png"></a></td>
+     		<td><a class="delete-alert" href="?action=supprchapter&id=<?= $data->getId() ?>"><img src="public/img/close-cross.png"></a></td>
      	</tr>
             
         <?php
         }
-        $posts->closeCursor();
         ?>
 		</table>
 <?php $content = ob_get_clean(); ?>

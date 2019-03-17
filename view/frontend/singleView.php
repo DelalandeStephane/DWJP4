@@ -1,14 +1,14 @@
-<?php $title = "Chapitre ". $chapter['chapter_index']; ?>
+<?php $title = "Chapitre ". $chapter->getChapter_index(); ?>
 <?php ob_start();?>
 	
 	<section id="single-page" class="content">
 		<article class="single-content">
-			<p class="chapter-time">date de création : <?= $chapter['creation_date_fr'] ?></p>
-			<h3><?= $chapter['title']?></h3>
-			<p class="chapter-content"><?= $chapter['content'] ?></p>
+			<p class="chapter-time">date de création : <?= $chapter->getCreationDate() ?></p>
+			<h3><?= $chapter->getTitle()?></h3>
+			<p class="chapter-content"><?= $chapter->getContent() ?></p>
 		</article>
 	</section>
-	<form method="post" action="index.php?action=sendComment&id=<?= $chapter['id'] ?>#chapter-comment" class="comment-form" id="chapter-comment">
+	<form method="post" action="index.php?action=sendComment&id=<?= $chapter->getId() ?>#chapter-comment" class="comment-form" id="chapter-comment">
 		<h3>Laisser un commentaire : </h3>
 		<label>Pseudo : </label>
 		<input type="text" name="pseudo" id="pseudo" required="" maxlength="150"><br>
@@ -28,7 +28,7 @@
 			</header>
 			<div class="comment-content">	
 				<p><?= $comment['comment'] ?></p>
-				<a href="?action=report&idcom=<?= $comment['id']?>&id=<?= $chapter['id'] ?>#chapter-comment" class="comment-alert">Signaler le commentaire</a>
+				<a href="?action=report&idcom=<?= $comment['id']?>&id=<?= $chapter->getId() ?>#chapter-comment" class="comment-alert">Signaler le commentaire</a>
 			</div>
 			</div>
 		<?php

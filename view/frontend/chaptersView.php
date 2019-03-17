@@ -11,19 +11,18 @@
 		<section id="index-content" class="content">
 			<?php
 
-        while ($data = $posts->fetch())
+        foreach ($posts as $data) 
         {
         	
         ?>
         <article class="index-page">
-			<h3><?= $data['title'] ?></h3>
-			<p><?= substr($data['content'],0,600) ?> ...</p>
-			<a href="?action=chapter&id=<?= $data['id'] ?>">Lire plus</a>
+			<h3><?= $data->getTitle() ?></h3>
+			<p><?= substr($data->getContent(),0,600) ?> ...</p>
+			<a href="?action=chapter&id=<?= $data->getId() ?>">Lire plus</a>
 		</article>
             
         <?php
         }
-        $posts->closeCursor();
         ?>
         <div id="nav-bar-mobile" >
 				<?php if(isset($_GET['page']) && $_GET['page'] != 1 && !empty($_GET['page'])): ?>

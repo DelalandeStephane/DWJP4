@@ -1,19 +1,41 @@
 <?php
-
-class article 
+namespace forteroche ;
+class Article 
 {
 	private $id;
-	private $chapterIndex;
+	private $Chapter_index;
 	private $title;
 	private $content;
 	private $creationDate;
 	private $UpdateDate;
 
+
+	public function __construct(array $data)
+  	{
+    $this->hydrate($data);
+  	}
+
+
+	public function hydrate(array $data)
+	{
+  		foreach ($data as $key => $value)
+	  	{
+		    // On récupère le nom du setter correspondant à l'attribut.
+		    $method = 'set'.ucfirst($key);
+		    // Si le setter correspondant existe.
+		    if (method_exists($this, $method))
+		    {
+		      // On appelle le setter.
+		      $this->$method($value);
+		    }
+	  	}
+	}
+
 	public  function getId() {
 		return $this->id;
 	}
-	public  function getChapterIndex() {
-		return $this->chapterIndex;
+	public  function getChapter_index() {
+		return $this->Chapter_index;
 	}
 	public  function getTitle() {
 		return $this->title;
@@ -31,8 +53,8 @@ class article
 	public  function setId($id) {
 		$this->id = $id;
 	}
-	public  function setChapterIndex($chapIndex) {
-		$this->chapterIndex = $chapIndex;
+	public  function setChapter_index($chapIndex) {
+		$this->Chapter_index = $chapIndex;
 	}
 	public  function setTitle($title) {
 		$this->title = $title;

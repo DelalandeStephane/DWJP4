@@ -1,5 +1,6 @@
 <?php
 
+
 /* Affichage de la vue creation */
 
 function adminRequest($username, $userpw) {
@@ -22,7 +23,16 @@ function creationArticle(){
 
 function sendChapter($chapterIndex,$title, $content) {
 	$postManager = new forteroche\PostManager();
-	$postManager->sendPost($chapterIndex, $title, $content);
+
+	$data = array (
+		'chapter_index' => $chapterIndex ,
+		'title' => $title ,
+		'content' => $content
+	);
+
+	$chapter = new forteroche\Article($data);
+	$postManager->sendPost($chapter);
+
 	header('Location: index.php?action=creationarticle');
 } 
 
@@ -46,8 +56,18 @@ function updateViewChapter($id) {
 }
 
 function updateChapter($chapterIndex,$title, $content,$id) {
-	$postManager= new forteroche\PostManager();
-	$sendPost = $postManager->adminUpdate($chapterIndex, $title, $content,$id);
+	$postManager = new forteroche\PostManager();
+
+	$data = array (
+		'chapter_index' => $chapterIndex ,
+		'title' => $title ,
+		'content' => $content,
+		'id' => $id
+	);
+
+	$chapter = new forteroche\Article($data);
+
+	$sendPost = $postManager->adminUpdate($chapter);
 	header('Location: index.php?action=adminposts');
 }
 

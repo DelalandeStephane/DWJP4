@@ -1,6 +1,6 @@
 <?php
 
-require 'model/AutoLoader.php'; //chargement des class model
+require_once 'model/AutoLoader.php'; //chargement des class model
 forteroche\AutoLoader::register(); 
 
 
