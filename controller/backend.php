@@ -86,7 +86,7 @@ function listReportComments() {
 function deleteComment($id) {
 	$commentManager = new forteroche\CommentManager();
 	$commentManager->adminDelete($id);
-	header('Location: index.php?action=admincomments');
+	header('Location: index.php?action=adminreportcomments');
 }
 
 function checkComment($id) {

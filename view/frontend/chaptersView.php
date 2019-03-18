@@ -10,18 +10,20 @@
 			</div>
 		<section id="index-content" class="content">
 			<?php
-
-        foreach ($posts as $data) 
-        {
-        	
-        ?>
-        <article class="index-page">
-			<h3><?= $data->getTitle() ?></h3>
-			<p><?= substr($data->getContent(),0,600) ?> ...</p>
-			<a href="?action=chapter&id=<?= $data->getId() ?>">Lire plus</a>
-		</article>
+		  if($posts != null)
+        {	
+	        foreach ($posts as $data) 
+	        {
+	        	
+	        ?>
+	        <article class="index-page">
+				<h3><?= $data->getTitle() ?></h3>
+				<p><?= substr($data->getContent(),0,600) ?> ...</p>
+				<a href="?action=chapter&id=<?= $data->getId() ?>">Lire plus</a>
+			</article>
             
         <?php
+        	}
         }
         ?>
         <div id="nav-bar-mobile" >

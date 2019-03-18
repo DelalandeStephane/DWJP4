@@ -16,9 +16,11 @@ class PostManager extends Manager
         {
         	$chapters[] = new Article($data);  
         }
-	    return  $chapters;
+        if(isset($chapters)){
+   			 return  $chapters;     	
+        } 
 	}
-	//Suprimme un chapitre
+	//Suprimmer un chapitre
 	public function adminDelete ($id) {
 		$req=$this->db->prepare('DELETE FROM chapter WHERE id = ?');
 		$deleted = $req->execute(array ($id));
@@ -48,7 +50,9 @@ class PostManager extends Manager
         {
         	$chapters[]= new Article($data);  
         }
-	    return  $chapters;
+        if(isset($chapters)){
+     		return  $chapters;   	
+        }
 	}
 	//affichage page single
 	public function getPost($chapterId)

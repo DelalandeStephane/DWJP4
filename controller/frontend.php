@@ -58,7 +58,15 @@ function reportCom(){
 function sendComment($chapterId, $author, $comment) 
 {
 	$commentManager = new forteroche\CommentManager();
-    $affectedLines =$commentManager->postComment($chapterId, $author, $comment);
+
+	$data = array (
+		'chapter_id' => $chapterId ,
+		'name' => $author ,
+		'comment' => $comment
+	);
+
+	$send = new forteroche\Comment($data);
+    $affectedLines =$commentManager->postComment($send);
     if($affectedLines == null) {
     	throw new Exception("Erreur: impossible d'envoyer le formulaire");	
     }

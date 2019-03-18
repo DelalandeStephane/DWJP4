@@ -10,22 +10,23 @@
 				<th>date de publication</th>
 				<th>supprimer</th>
 			</tr>
-		<?php	
-        while ($data = $comments->fetch())
-        {
-        ?>
-     	<tr>
-     		<td><?= $data['id'] ?></td>
-            <td><?= $data['chapter_id']?></td>
-     		<td><?= $data['name'] ?></td>
-     		<td><?= $data['comment'] ?></td>
-     		<td><?= $data['comment_date_fr'] ?></td>
-     		<td><a class="delete-alert" href="?action=supprcomment&id=<?= $data['id'] ?>"><img src="public/img/close-cross.png"></a></td>
-     	</tr>
+		<?php
+          if($comments != null)
+        {   
+            foreach ($comments as $data) {
+                 ?>
+        <tr>
+            <td><?= $data->getId() ?></td>
+            <td><?= $data->getChapter_id() ?></td>
+            <td><?= $data->getName() ?></td>
+            <td><?= $data->getComment() ?></td>
+            <td><?= $data->getCommentDate() ?></td>
+            <td><a class="delete-alert" href="?action=supprcomment&id=<?= $data->getId() ?>"><img src="public/img/close-cross.png"></a></td>
+        </tr>
             
         <?php
-        }
-        $comments->closeCursor();
+            }
+        }	
         ?>
 		</table>
 <?php $content = ob_get_clean(); ?>

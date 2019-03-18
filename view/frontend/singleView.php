@@ -19,21 +19,23 @@
 	<section>
 		<h2 class="comment-title">Commentaires</h2>
 		<?php
-			while ($comment = $comments->fetch()) {
+		  if($comments != null)
+        {	
+			foreach ($comments as $comment) {
 			?> 
 			<div class="comment-deco">
 			<header>
-				<h3><?= $comment['name'] ?></h3>
-				<p><?= $comment['comment_date_fr'] ?></p>
+				<h3><?= $comment->getName(); ?></h3>
+				<p><?= $comment->getCommentDate() ?></p>
 			</header>
 			<div class="comment-content">	
-				<p><?= $comment['comment'] ?></p>
-				<a href="?action=report&idcom=<?= $comment['id']?>&id=<?= $chapter->getId() ?>#chapter-comment" class="comment-alert">Signaler le commentaire</a>
+				<p><?= $comment->getComment() ?></p>
+				<a href="?action=report&idcom=<?= $comment->getId() ?>&id=<?= $chapter->getId() ?>#chapter-comment" class="comment-alert">Signaler le commentaire</a>
 			</div>
 			</div>
 		<?php
+			}
  		} 
- 		 $comments->closeCursor();
 		?>
 	</section>
 			
