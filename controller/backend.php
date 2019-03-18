@@ -18,22 +18,42 @@ function adminRequest($username, $userpw) {
 }
 
 function creationArticle(){
+
 	require('view/backend/creationView.php');
 }
 
 function sendChapter($chapterIndex,$title, $content) {
 	$postManager = new forteroche\PostManager();
 
-	$data = array (
-		'chapter_index' => $chapterIndex ,
-		'title' => $title ,
-		'content' => $content
-	);
+	
 
-	$chapter = new forteroche\Article($data);
-	$postManager->sendPost($chapter);
+	if(!empty($chapterIndex) && !empty($title) && !empty($content)){
 
-	header('Location: index.php?action=creationarticle');
+
+			unset($_SESSION['title']);
+			unset($_SESSION['chapterIndex']);
+			unset($_SESSION['content']);
+
+			$data = array (
+			'chapter_index' => $chapterIndex ,
+			'title' => $title ,
+			'content' => $content
+			);
+
+			$chapter = new forteroche\Article($data);
+			$postManager->sendPost($chapter);
+
+			header('Location: index.php?action=creationarticle');
+
+
+	} else {
+
+		$_SESSION['chapterIndex'] = $chapterIndex;
+		$_SESSION['title'] = $title;
+		$_SESSION['content'] = $content;
+		header('Location: index.php?action=creationarticle&error=true');
+	}
+	
 } 
 
 function adminListChapters()
@@ -41,6 +61,7 @@ function adminListChapters()
 	$postManager = new forteroche\PostManager();
 	$posts = $postManager->adminPosts();
 	require('view/backend/chapterListView.php');
+
 }
 
 function deleteChapter($id) {

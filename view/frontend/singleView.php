@@ -11,10 +11,11 @@
 	<form method="post" action="index.php?action=sendComment&id=<?= $chapter->getId() ?>#chapter-comment" class="comment-form" id="chapter-comment">
 		<h3>Laisser un commentaire : </h3>
 		<label>Pseudo : </label>
-		<input type="text" name="pseudo" id="pseudo" required="" maxlength="150"><br>
+		<input type="text" name="pseudo" id="pseudo" maxlength="150"><br>
 		<label>Votre commentaire</label><br>
-		<textarea id="comment" name="comment" required></textarea><br>
+		<textarea id="comment" name="comment"></textarea><br>
 		<input type="submit" value="Envoyer" class="form-bt">
+		 <?php if(isset($_GET['error'])){ ?> <p class="error">Vous n'avez pas saisi tout les champs</p>   <?php } ?>
 	</form>
 	<section>
 		<h2 class="comment-title">Commentaires</h2>
