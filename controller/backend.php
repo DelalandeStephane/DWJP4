@@ -6,8 +6,8 @@
 function adminRequest($username, $userpw) {
 	$securityManager = new forteroche\securityManager();
 	$access = $securityManager->reqPassword($username);
-	$name= $access['name'];
-	$pass = $access['password'];
+	$name= $access->getName();
+	$pass = $access->getPassword();
 	if($username == $name && password_verify($userpw, $pass)) {
 		$_SESSION['access'] = true;
 		require('view/backend/home.php');

@@ -11,7 +11,8 @@ class SecurityManager extends Manager {
 	public function reqPassword ($name) {
 		$req=$this->db->prepare('SELECT * FROM password WHERE name=?');
 		$req->execute(array($name));
-		$access = $req->fetch();
+		$data = $req->fetch();
+		$access = new User($data);
 		return $access;
 	}
 	public function updatePassword () {

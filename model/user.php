@@ -1,6 +1,6 @@
 <?php
 namespace forteroche ;
-class Comment 
+class User 
 {
 	private $id;
 	private $name;
